@@ -7,10 +7,20 @@
   "icons": {
     "48": "icons/dic.jpg"
   },
+  "permissions": [
+    "<all_urls>",
+    "activeTab",
+    "tabs"
+  ],
   "browser_action": {
-    "default_icon": "icons/dic.jpg",
+    "default_icon": "icons/dic.png",
     "default_title": "amo-dic",
     "default_popup": "popup/dic_popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background-script.js"
+    ]
   },
   "content_scripts": [
     {
@@ -18,8 +28,15 @@
         "<all_urls>"
       ],
       "js": [
+        "js/jquery.min.js",
+        "js/crypto-js.js",
         "content-script.js"
       ]
     }
+  ],
+  "web_accessible_resources": [
+    "images/dic.png",
+    "fake/laba.png",
+    "fake/love.png"
   ]
 }

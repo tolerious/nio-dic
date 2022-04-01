@@ -1,0 +1,27 @@
+
+.square-container-innner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /*align-items: center;*/
+}
+
+.first-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.first-line > div:nth-child(2) > img {
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.first-line > div:nth-child(3) > img {
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
