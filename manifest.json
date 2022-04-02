@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
   "name": "amo-dic",
-  "version": "1.0",
+  "version": "1.0.3",
   "description": "a dic tool for translating English to Chinese.",
   "homepage_url": "https://github.com/tolerious/amo-dic",
   "icons": {
-    "48": "icons/dic.jpg"
+    "48": "icons/dic.png"
   },
   "permissions": [
     "activeTab",

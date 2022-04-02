@@ -24,7 +24,7 @@ function canAddIcon(text) {
         iconDiv.addEventListener("click", iconClick);
         let htmlImageElement = document.createElement("img");
         iconDiv.setAttribute("id", "amo-dic-id");
-        htmlImageElement.src = browser.extension.getURL("images/dic.png");
+        htmlImageElement.src = browser.runtime.getURL("images/dic.png");
         htmlImageElement.style.height = 25 + "px";
         htmlImageElement.style.width = 25 + "px";
         htmlImageElement.style.cursor = "pointer";
@@ -105,7 +105,6 @@ function createPopupDom(data) {
         s += str;
     }
     let dom = `
-<div class="square-container">
     <div class="square-container-innner">
         <div class="first-line">
             <div><span>${data.query}</span></div>
@@ -116,7 +115,6 @@ function createPopupDom(data) {
            ${s}
         </div>
     </div>
-</div>
     `;
 
     let htmlDivElement = document.createElement("div");
