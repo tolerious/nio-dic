@@ -121,15 +121,8 @@ function createPopupDom(data) {
 
     let htmlDivElement = document.createElement("div");
     htmlDivElement.setAttribute("id", "popup-panel");
+    htmlDivElement.setAttribute("class", "square-container");
     htmlDivElement.innerHTML = dom;
-    htmlDivElement.style.width = 300 + "px";
-    htmlDivElement.style.border = "1px solid #409EFF";
-    htmlDivElement.style.padding = "2px";
-    htmlDivElement.style.borderRadius = "3px";
-    htmlDivElement.style.boxSizing = "border-box";
-    htmlDivElement.style.position = "fixed";
-    htmlDivElement.style.backgroundColor = "white";
-    htmlDivElement.style.zIndex = "999";
     htmlDivElement.style.left = (positionX + positionWidth) + "px";
     htmlDivElement.style.top = positionY + "px";
 
