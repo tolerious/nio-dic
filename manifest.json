@@ -8,9 +8,9 @@
     "48": "icons/dic.jpg"
   },
   "permissions": [
-    "<all_urls>",
     "activeTab",
-    "tabs"
+    "tabs",
+    "<all_urls>"
   ],
   "browser_action": {
     "default_icon": "icons/dic.png",
@@ -38,5 +38,6 @@
     "images/dic.png",
     "fake/laba.png",
     "fake/love.png"
-  ]
+  ],
+  "content_security_policy": "script-src 'self'; object-src 'self'; media-src 'self' 'https://citydomain.com/'"
 }

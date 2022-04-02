@@ -49,7 +49,6 @@ function iconClick() {
     console.log("click");
     var selectedText = window.getSelection().toString().trim();
     translate(selectedText);
-    createPopupDom();
 }
 
 function truncate(q) {
@@ -74,7 +73,7 @@ function translate(translateText) {
     $.ajax({
         url: "http://openapi.youdao.com/api",
         type: "post",
-        dataType: "jsonp",
+        // dataType: "jsonp",
         data: {
             q: query,
             appKey: appKey,
@@ -86,27 +85,35 @@ function translate(translateText) {
             curtime: curtime,
         },
         success: function (data) {
-            console.log(data);
+            createPopupDom(data);
+        },
+        error: function () {
+            console.log(123);
         }
     });
 
 
 }
 
-function createPopupDom() {
+function createPopupDom(data) {
+    console.log(data.speakUrl);
     let laba = browser.runtime.getURL("fake/laba.png");
     let love = browser.runtime.getURL("fake/love.png");
-    console.log(laba);
+    let s = "";
+    for (let i = 0; i < data.basic.explains.length; i++) {
+        let str = "<p>" + data.basic.explains[i] + "</p>";
+        s += str;
+    }
     let dom = `
 <div class="square-container">
     <div class="square-container-innner">
         <div class="first-line">
-            <div><span>English</span></div>
-            <div><img src="${laba}" alt="laba"></div>
-            <div><img src="${love}" alt="laba"></div>
+            <div><span>${data.query}</span></div>
+            <div id="laba"><img src="${laba}" alt="laba"></div>
+            <div id="love"><img src="${love}" alt="laba"></div>
         </div>
         <div class="second-line">
-            <p>英语，英文的。</p>
+           ${s}
         </div>
     </div>
 </div>
@@ -122,10 +129,18 @@ function createPopupDom() {
     htmlDivElement.style.boxSizing = "border-box";
     htmlDivElement.style.position = "fixed";
     htmlDivElement.style.backgroundColor = "white";
+    htmlDivElement.style.zIndex = "999";
     htmlDivElement.style.left = (positionX + positionWidth) + "px";
     htmlDivElement.style.top = positionY + "px";
 
     document.body.appendChild(htmlDivElement);
+    //add event listener
+    let audioDom = document.getElementById("laba");
+    audioDom.addEventListener("click", function () {
+        let audio = new Audio(data.speakUrl);
+        audio.play();
+    });
+
 }
 
 browser.runtime.sendMessage({action: "insert"});
