@@ -36,8 +36,9 @@
   ],
   "web_accessible_resources": [
     "images/dic.png",
-    "fake/laba.png",
-    "fake/love.png"
+    "images/laba.png",
+    "images/love-active.png",
+    "images/love-inactive.png"
   ],
   "content_security_policy": "script-src 'self'; object-src 'self'; media-src 'self' 'https://citydomain.com/'"
 }

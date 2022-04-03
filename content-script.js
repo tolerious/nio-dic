@@ -18,7 +18,7 @@ function copySelection(e) {
 
 function canAddIcon(text) {
     let element = document.querySelector("#amo-dic-id");
-    let popup = document.querySelector("#shadow-root-container");
+    let iframe = document.querySelector("#dic-iframe");
     if (!element && text) {
         const iconDiv = document.createElement("div");
         iconDiv.addEventListener("click", iconClick);
@@ -41,7 +41,7 @@ function canAddIcon(text) {
         document.body.appendChild(iconDiv);
     } else {
         element.parentNode.removeChild(element);
-        // popup.parentNode.removeChild(popup);
+        iframe.parentNode.removeChild(iframe);
     }
 }
 
@@ -84,12 +84,10 @@ function translate(translateText) {
             curtime: curtime,
         },
         success: function (data) {
-            // createPopupDom(data);
-            // createPopDom(data);
             createiFrame(data);
         },
-        error: function () {
-            console.log(123);
+        error: function (e) {
+            throw Error(e);
         }
     });
 
