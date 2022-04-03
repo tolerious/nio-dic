@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "nio-dic",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "a dic tool for translating English to Chinese.",
   "homepage_url": "https://github.com/tolerious/nio-dic",
   "icons": {
