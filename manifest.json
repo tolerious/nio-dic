@@ -3,9 +3,9 @@
   "name": "nio-dic",
   "version": "1.0.5",
   "description": "a dic tool for translating English to Chinese.",
-  "homepage_url": "https://github.com/tolerious/amo-dic",
+  "homepage_url": "https://github.com/tolerious/nio-dic",
   "icons": {
-    "48": "icons/dic.png"
+    "48": "icons/dic-48.png"
   },
   "permissions": [
     "activeTab",
@@ -13,8 +13,8 @@
     "<all_urls>"
   ],
   "browser_action": {
-    "default_icon": "icons/dic.png",
-    "default_title": "amo-dic",
+    "default_icon": "icons/dic-48.png",
+    "default_title": "nio-dic",
     "default_popup": "popup/dic_popup.html"
   },
   "background": {

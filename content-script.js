@@ -24,7 +24,7 @@ function canAddIcon(text) {
         iconDiv.addEventListener("click", iconClick);
         let htmlImageElement = document.createElement("img");
         iconDiv.setAttribute("id", "amo-dic-id");
-        htmlImageElement.src = browser.runtime.getURL("images/dic.png");
+        htmlImageElement.src = browser.runtime.getURL("images/dic-48.png");
         htmlImageElement.style.height = 25 + "px";
         htmlImageElement.style.width = 25 + "px";
         htmlImageElement.style.cursor = "pointer";
