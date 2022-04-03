@@ -103,6 +103,9 @@ function createiFrame(data) {
     htmliFrameElement.style.top = positionY + "px";
     htmliFrameElement.style.border = "1px solid #409EFF";
     htmliFrameElement.style.borderRadius = "3px";
+    htmliFrameElement.style.backgroundColor = "white";
+    htmliFrameElement.style.zIndex = "99999";
+    htmliFrameElement.style.width = "300px";
     document.body.appendChild(htmliFrameElement);
     window.addEventListener("message", function (e) {
         if (e.data.type == "iframe2ext") {
